@@ -1,0 +1,58 @@
+## Your model here.
+## Your model here.
+knn_w = neighbors.KNeighborsRegressor(n_neighbors=15, weights='distance')
+X = pd.DataFrame(music.loudness)
+Y = music.bpm
+knn_w.fit(X, Y)
+
+# Set up our prediction line.
+T = np.arange(0, 50, 0.1)[:, np.newaxis]
+
+Y_ = knn_w.predict(T)
+
+plt.scatter(X, Y, c='k', label='data')
+plt.plot(T, Y_, c='g', label='prediction')
+plt.legend()
+plt.title('K=15, Weighted')
+plt.show()
+
+
+
+## Your model here.
+## Your model here.
+knn_w = neighbors.KNeighborsRegressor(n_neighbors=5, weights='distance')
+X = pd.DataFrame(music.loudness)
+Y = music.bpm
+knn_w.fit(X, Y)
+
+# Set up our prediction line.
+T = np.arange(0, 50, 0.1)[:, np.newaxis]
+
+Y_ = knn_w.predict(T)
+
+plt.scatter(X, Y, c='k', label='data')
+plt.plot(T, Y_, c='g', label='prediction')
+plt.legend()
+plt.title('K=5, Weighted')
+plt.show()
+
+
+
+## Your model here.
+## Your model here.
+knn_w = neighbors.KNeighborsRegressor(n_neighbors=1, weights='distance')
+X = pd.DataFrame(music.loudness)
+Y = music.bpm
+knn_w.fit(X, Y)
+
+# Set up our prediction line.
+T = np.arange(0, 50, 0.1)[:, np.newaxis]
+
+Y_ = knn_w.predict(T)
+
+plt.scatter(X, Y, c='k', label='data')
+plt.plot(T, Y_, c='g', label='prediction')
+plt.legend()
+plt.title('K=5, Weighted')
+plt.show()
+
